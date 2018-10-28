@@ -53,8 +53,7 @@ def build_df_sample(df, sizeofeach=1000):
     return df_r
 
 def get_topic(url):
-    r = re.get(url)
-    content = r.content
+    content = re.get(url).content
     soup = bs(content, "html.parser")
     heading = soup.find_all('h1')
     return str.strip(heading[0].text)
